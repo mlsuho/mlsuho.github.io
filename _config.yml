@@ -4,7 +4,7 @@ permalink:        /:categories/:title
 # Setup
 title:            'Su Ho V.'
 url:              https://suhv.github.io
-baseurl:          /
+baseurl:          '/'
 description:      'Full-Stack Developer'
 
 excerpt_separator: '<!--excerpt-->'
