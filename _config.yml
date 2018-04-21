@@ -1,0 +1,28 @@
+# Permalinks
+permalink:        /:categories/:title
+
+# Setup
+title:            'Su Ho V.'
+url:              https://suhv.github.io
+baseurl:          /
+description:      'Full-Stack Developer'
+
+excerpt_separator: '<!--excerpt-->'
+
+author:
+  name:           'Su Ho V.'
+  url:            https://github.com/suhv
+
+paginate:         5
+
+# Custom vars
+version:          2.0.0
+twitter:          https://twitter.com/_suhv
+github:
+  base:           https://github.com/suhv
+  repo:           https://github.com/suhv/suhv.github.io
+linkedin:         https://www.linkedin.com/in/ssuhv
+
+plugins:
+  - jekyll-paginate
+  - jekyll-gist

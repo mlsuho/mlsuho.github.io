@@ -1,0 +1,62 @@
+.sidebar-about img {
+	display: inline;
+	/* image-rendering: pixelated; */
+}
+
+/*
+ * Social Icons
+ */
+
+.social-icons.icon-circle .fa {
+  border-radius: 50%;
+}
+
+.social-icons .fa {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.6em;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icons .fa:hover,
+.social-icons .fa:active {
+  color: #FFFFFF;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2); 
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline li {
+  display: inline-block;
+  padding: 0 .5rem;
+}
+
+.social-icons .fa-facebook {
+  background-color: #3C599F;
+}
+
+.social-icons .fa-twitter {
+  background-color: #32CCFE;
+}
+
+.social-icons .fa-github-alt {
+  background-color: #070709;
+}
+
+.social-icons .fa-linkedin {
+  background-color: #0085AE;
+}
