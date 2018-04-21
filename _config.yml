@@ -26,3 +26,4 @@ linkedin:         https://www.linkedin.com/in/ssuhv
 plugins:
   - jekyll-paginate
   - jekyll-gist
+theme: jekyll-theme-cayman
