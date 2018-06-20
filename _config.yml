@@ -5,7 +5,7 @@ permalink:        /:categories/:title
 title:            'Su Ho V.'
 url:              https://mlsuho.github.io
 baseurl:          '/'
-description:      'Full-Stack Developer'
+description:      'Engineer'
 
 excerpt_separator: '<!--excerpt-->'
 
