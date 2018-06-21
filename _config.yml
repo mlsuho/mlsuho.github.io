@@ -16,7 +16,8 @@ author:
 paginate:         5
 
 # Custom vars
-version:          2.0.0
+version:          1.0.0
+username:         'mlsuho'
 twitter:          https://twitter.com/mlsuho
 github:
   base:           https://github.com/mlsuho
