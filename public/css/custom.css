@@ -1,6 +1,7 @@
 .sidebar-about img {
   display: inline;
-  border-radius: 135px;
+  border-radius: 80px;
+  border: white solid 2px;
 	/* image-rendering: pixelated; */
 }
 
