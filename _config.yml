@@ -2,7 +2,7 @@
 permalink:        /:categories/:title
 
 # Setup
-title:            'Su Ho V.'
+title:            "I'm Su Ho V."
 url:              https://mlsuho.github.io
 baseurl:          '/'
 description:      'Engineer'

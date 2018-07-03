@@ -1,5 +1,7 @@
 .sidebar-about img {
-	display: inline;
+  display: inline;
+  border-radius: 80px;
+  border: white solid 2px;
 	/* image-rendering: pixelated; */
 }
 
@@ -61,12 +63,26 @@
   background-color: #0085AE;
 }
 
-#particles-js {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+@media (min-width: 0em) {
+  #particles-js {
+    height: 0px;
+  } 
+}
+
+@media (min-width: 48em) {
+  #particles-js {
+    height: calc(100vh - 4rem);
+  }
+}
+
+#title-typed {
+  color: #fff;
+  margin-top: 0;
+  font-family: "Abril Fatface", serif;
+  font-size: 2rem;
+}
+
+.description-typed {
+  font-size: 1.25rem;
+  font-weight: 300;
 }

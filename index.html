@@ -4,6 +4,7 @@ title: Home
 ---
 
 <div class="posts">
+  {% assign counter = 1 %}
   {% for post in paginator.posts %}
   <div class="post">
     <h1 class="post-title">
@@ -13,9 +14,13 @@ title: Home
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.excerpt }}
+    
+    {{ post.excerpt | truncate: 200 }}
+    {% if counter < paginator.posts.size %}
+    <hr>
+    {% endif %}
   </div>
+    {% assign counter = counter | plus: 1 %}
   {% endfor %}
 </div>
 
