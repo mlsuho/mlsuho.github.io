@@ -12,7 +12,9 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-
+    {% for category in post.categories %}
+    <p class="badge badge-pill badge-dark">{{ category }}</p>
+    {% endfor %}
     <span class="post-date">{{ post.date | date_to_string }}</span>
     
     {{ post.excerpt | truncate: 200 }}
