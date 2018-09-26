@@ -5,7 +5,7 @@ permalink:        /:categories/:year/:month/:day/:title
 title:            "I'm Su Ho V."
 url:              https://mlsuho.github.io
 baseurl:          '/'
-description:      'Engineer'
+description:      'Software Engineer'
 
 excerpt_separator: '<!--excerpt-->'
 
