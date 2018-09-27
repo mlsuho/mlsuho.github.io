@@ -2,7 +2,9 @@
   <div id="particles-js"></div>
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
+      {% if page.url == '/about' %}
       <img src="{{site.url}}/public/images/square-avatar-v2.png" alt="square-avatar" width="160" height="160">
+      {% endif %}
       <br>
       <div id="title-typed-strings">
           <p>{{ site.title }}</p>
@@ -13,11 +15,14 @@
 
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.url }}">Home</a>
-      {% comment %} The code below dynamically generates a sidebar nav of pages with `layout: page` in the front-matter. See readme
-      for usage. {% endcomment %} {% assign pages_list = site.pages %} {% for node in pages_list %} {% if node.title != null
-      %} {% if node.layout == "page" %}
-      <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }} {% if node.title == 'Categories' %} <span class="badge badge-pill badge-light">{{ site.categories.size }}</span> {% endif %}</a>
-      {% endif %} {% endif %} {% endfor %}
+      {% assign pages_list = site.pages %} 
+      {% for node in pages_list %} 
+        {% if node.title != null %} 
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }} {% if node.title == 'Categories' %} <span class="badge badge-pill badge-light">{{ site.categories.size }}</span> {% endif %}</a>
+          {% endif %} 
+        {% endif %} 
+      {% endfor %}
     </nav>
     <ul class="social-icons icon-circle list-unstyled list-inline">
       {% assign social_links = site.data.social %} {% for node in social_links %}
