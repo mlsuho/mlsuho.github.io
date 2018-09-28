@@ -113,3 +113,39 @@
   color: #fff;
   background-color: #343a40;
 }
+
+#menu-button {
+  position: fixed;
+  visibility: hidden;
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px;
+}
+
+@media (min-width: 48em) {
+  #menu-button {
+    visibility: visible;
+  }
+}
+
+.menu-animate-1, .menu-animate-2, .menu-animate-3 {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.update-ui .menu-animate-1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 4px);
+  transform: rotate(-45deg) translate(-8px, 4px);
+}
+
+.update-ui .menu-animate-2 { 
+  opacity: 0; 
+}
+
+.update-ui .menu-animate-3 {
+  -webkit-transform: rotate(45deg) translate(-9px, -5px);
+  transform: rotate(45deg) translate(-9px, -5px);
+}
