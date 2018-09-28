@@ -7,7 +7,7 @@ comments: true
 
 Chào mọi người, đây là bài blog đầu tiên trong sự nghiệp viết lách của mình, hy vọng sẽ mang lại kiến thức cho mọi người.
 
-Giới thiệu về mình một chút, mình tên là Sự, mình bắt đầu với iOS developer, sau này thì có vọc thêm nhiều thứ. Mọi người muốn xem chi tiết về mình thì của sang trang [About]({{site.url}}/about) nhé. Ý định viết blog cũng xuất hiện trong đầu rất là lâu rồi, bây giờ mới ngồi viết một cách nghiêm túc. Thôi tránh lan man, mình đi vào chủ đề chính nhé 😉
+Giới thiệu về mình một chút, mình tên là Sự, mình bắt đầu với iOS, sau này thì có vọc thêm nhiều thứ. Mọi người muốn xem chi tiết về mình thì của sang trang [About]({{site.url}}/about) nhé. Ý định viết blog cũng xuất hiện trong đầu rất là lâu rồi, bây giờ mới ngồi viết một cách nghiêm túc. Thôi tránh lan man, mình đi vào chủ đề chính nhé 😉
 
 > Vì nội dung mình muốn chia sẻ hơi nhiều, nên mình đã tách ra nhiều Part, các bạn nhớ theo dõi nhé, cảm ơn các bạn.
 
