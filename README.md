@@ -1,10 +1,10 @@
-# mlsuho.github.io
+# mlsuho.me
 
-My Github Pages
+My Github Pages, including blogs and about me.
 
 # Author
 
-Su Ho Van - hovansu.it@gmail.com
+Su Ho V. - contact@mlsuho.me
 
 # Acknowledgements
 
