@@ -82,7 +82,7 @@ a:focus {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.25;
   color: #313131;
   text-rendering: optimizeLegibility;
@@ -111,6 +111,7 @@ p {
 
 strong {
   color: #303030;
+  font-weight: 400;
 }
 
 
@@ -150,7 +151,7 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: "Courier New", monospace;
 }
 code {
   padding: .25em .5em;
@@ -389,7 +390,7 @@ tbody tr:nth-child(odd) th {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
 }
