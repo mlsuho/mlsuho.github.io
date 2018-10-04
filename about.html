@@ -12,7 +12,7 @@ title: About
       <p id='header-address'>{{cv_header.address}}</p>
       <p id='header-contact'>
         {% for node in cv_header.contact %}
-        <i class='{{node.class}}'></i> <a href='{{node.link}}' target='_blank'>{{node.title}}</a>
+        <a href='{{node.link}}' target='_blank'><i class='{{node.class}}'></i> {{node.title}}</a>
         {% if forloop.last == false %} | {% endif %}
         {% endfor %}
       </p>
