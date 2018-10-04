@@ -3,4 +3,69 @@ layout: about
 title: About
 ---
 
-<p>Coming soon...</p>
+<div class='about-me'>
+  <div class='cv'>
+    <div class='cv-header'>
+      {% assign cv_header = site.data.cv_header %}
+      <p id='header-name'>{{cv_header.name}}</p>
+      <p id='header-title' class='blue'>{{cv_header.title}}</p>
+      <p id='header-address'>{{cv_header.address}}</p>
+      <p id='header-contact'>
+        {% for node in cv_header.contact %}
+        <i class='{{node.class}}'></i> <a href='{{node.link}}' target='_blank'>{{node.title}}</a>
+        {% if forloop.last == false %} | {% endif %}
+        {% endfor %}
+      </p>
+      <p id='header-quote'>{{cv_header.quote}}</p>
+    </div>
+    <div class='cv-section'>
+      {% assign cv_summary = site.data.cv_summary %}
+      <p class='title'><span>{{cv_summary.title}}</span></p>
+      <p>{{cv_summary.detail}}</p>
+    </div>
+    <div class='cv-section'>
+      {% assign cv_work_experience = site.data.cv_work_experience %}
+      <p class='title'><span>{{cv_work_experience.title}}</span></p>
+      {% for node in cv_work_experience.detail %}
+      <div class='cv-row'>
+        <div class='cv-col'>
+          <p class='cv-node-name'>{{node.name}}</p>
+          <p class='cv-node-title'>{{node.title}}</p>
+        </div>
+        <div class='cv-col text-right'>
+          <p class='blue text-italic'>{{node.location}}</p>
+          <p class='text-italic'>{{node.time}}</p>
+        </div>
+      </div>
+      <p>{{node.detail}}</p>
+      {% endfor %}
+    </div>
+    <div class='cv-section'>
+      {% assign cv_education = site.data.cv_education %}
+      <p class='title'><span>{{cv_education.title}}</span></p>
+      {% for node in cv_education.detail %}
+      <div class='cv-row'>
+          <div class='cv-col'>
+            <p class='cv-node-name'>{{node.name}}</p>
+            <p class='cv-node-title'>{{node.title}}</p>
+          </div>
+          <div class='cv-col text-right'>
+            <p class='blue text-italic'>{{node.location}}</p>
+            <p class='text-italic'>{{node.time}}</p>
+          </div>
+        </div>
+      <p>{{node.detail}}</p>
+      {% endfor %}
+    </div>
+    <div class='cv-section'>
+      {% assign cv_skill = site.data.cv_skill %}
+      <p class='title'><span>{{cv_skill.title}}</span></p>
+      <p>{{cv_skill.detail}}</p>
+    </div>
+    <div class='cv-section'>
+      {% assign cv_interest = site.data.cv_interest %}
+      <p class='title'><span>{{cv_interest.title}}</span></p>
+      <p>{{cv_interest.detail}}</p>
+    </div>
+  </div>
+</div>

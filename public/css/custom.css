@@ -9,11 +9,11 @@
  * Social Icons
  */
 
-.social-icons.icon-circle .fa {
+.social-icons.icon-circle .fab {
   border-radius: 50%;
 }
 
-.social-icons .fa {
+.social-icons .fab {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -27,8 +27,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.social-icons .fa:hover,
-.social-icons .fa:active {
+.social-icons .fab:hover,
+.social-icons .fab:active {
   color: #FFFFFF;
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
