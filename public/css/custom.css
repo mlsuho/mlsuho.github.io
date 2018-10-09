@@ -149,3 +149,7 @@
   -webkit-transform: rotate(45deg) translate(-9px, -5px);
   transform: rotate(45deg) translate(-9px, -5px);
 }
+
+.page, .post {
+  margin-bottom: 2em;
+}
