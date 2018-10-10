@@ -32,3 +32,27 @@ Phía trên mình đã chia sẻ về Lịch sử, cũng như mối liên hệ g
 <p align="center">
   <img src="{{site.url}}/public/images/machine-learning/data.png" width="250">
 </p>
+
+Đầu tiên, thứ phải nói là quan trọng nhất trong một bài toán **Machine Learning** đó chính là `data` - **dữ liệu**. Nếu một bài toán không có dữ liệu thì bạn **không** nên áp dụng *Machine Leaning* vào bài toán đó.
+
+Sau khi có dữ liệu, tuỳ thuộc vào bài toán của bạn, bạn sẽ chọn `thuật toán phù hợp` để phân tích dữ liệu của bạn.
+
+<p align="center">
+  <img src="{{site.url}}/public/images/machine-learning/ml-algorithms.png" width="250">
+</p>
+
+Xử lý dữ liệu bằng thuật toán Machine Learning, chúng ta sẽ được kết quả là `model`. Nếu các bạn tiếp xúc với Machine Learning, chắc chắn các bạn sẽ biết tới `model`. Thực ra cũng không có gì cao siêu cả, model nó cũng giống như một `function`. Việc của chúng ta là đưa đầu vào vào *function* đó, nó sẽ đưa cho mình đầu ra.
+
+<p align="center">
+  <img src="{{site.url}}/public/images/machine-learning/model.png">
+</p>
+
+Cuối cùng, mình tổng hợp lại quá trình của bài toán `Machine Learning` qua hình ảnh này
+
+<p align="center">
+  <img src="{{site.url}}/public/images/machine-learning/process.png">
+</p>
+
+Tới đây là kết thúc `phần 2` rồi, phần 3 tiếp theo mình sẽ giới thiệu `Categories of Machine Learning` - *các loại học*. Tại sao lại có các loại học? Dựa vào đâu để phân biệt? Và các ví dụ. Các bạn đón đọc nhé 
+
+Cảm ơn mọi người 😘😘😘
