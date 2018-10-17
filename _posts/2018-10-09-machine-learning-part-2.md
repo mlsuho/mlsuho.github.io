@@ -13,8 +13,8 @@ Chào mọi người, mình đã quay trở lại. Sau vài tuần bận rộn c
 
 Ở Part 1, mình đã giới thiệu và đưa mọi người tiếp cận khái niệm Machine Learning là gì. Tiếp theo mình sẽ đề cập một chút về `lịch sử` của nó. Đầu tiên giới thiệu cho bạn một bức ảnh (nguồn từ NVIDIA)
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/ml-history.png">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/ml-history.png" alt="image of ml history">
 </p>
 
 Trong bức ảnh, thì mình sẽ có 3 **keyword** cần nói, đó là `Artificial Intelligence`, `Machine Learning` và `Deep Learning`.
@@ -29,28 +29,28 @@ Những năm gần đây, sự phát triển của các hệ thống cũng lư�
 
 Phía trên mình đã chia sẻ về Lịch sử, cũng như mối liên hệ giữa *Artificial Intelligence*, *Machine Learning* và *Deep Learning*. Tiếp theo, mình sẽ chia sẻ cho mọi người về `process` của một bài toán Machine Learning là như thế nào.
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/data.png" width="250">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/data.png" width="250" alt="image of data">
 </p>
 
 Đầu tiên, thứ phải nói là quan trọng nhất trong một bài toán **Machine Learning** đó chính là `data` - **dữ liệu**. Nếu một bài toán không có dữ liệu thì bạn **không** nên áp dụng *Machine Leaning* vào bài toán đó.
 
 Sau khi có dữ liệu, tuỳ thuộc vào bài toán của bạn, bạn sẽ chọn `thuật toán phù hợp` để phân tích dữ liệu của bạn.
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/ml-algorithms.png" width="250">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/ml-algorithms.png" width="250" alt="image of ml algorithms">
 </p>
 
 Xử lý dữ liệu bằng thuật toán Machine Learning, chúng ta sẽ được kết quả là `model`. Nếu các bạn tiếp xúc với Machine Learning, chắc chắn các bạn sẽ biết tới `model`. Thực ra cũng không có gì cao siêu cả, model nó cũng giống như một `function`. Việc của chúng ta là đưa đầu vào vào *function* đó, nó sẽ đưa cho mình đầu ra.
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/model.png">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/model.png" alt="image of model">
 </p>
 
 Cuối cùng, mình tổng hợp lại quá trình của bài toán `Machine Learning` qua hình ảnh này
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/process.png">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/process.png" alt="image of process">
 </p>
 
 Tới đây là kết thúc `phần 2` rồi, phần 3 tiếp theo mình sẽ giới thiệu `Categories of Machine Learning` - *các loại học*. Tại sao lại có các loại học? Dựa vào đâu để phân biệt? Và các ví dụ. Các bạn đón đọc nhé 

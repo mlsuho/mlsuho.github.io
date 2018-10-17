@@ -153,3 +153,7 @@
 .page, .post {
   margin-bottom: 2em;
 }
+
+.p-center {
+  text-align: center;
+}

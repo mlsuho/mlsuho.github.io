@@ -24,8 +24,8 @@ Trước khi giới thiệu về `Machine Learning`, mình sẽ show cho mọi n
 
 Đầu tiên, ứng dụng **Face Recognition in ARKit**, đây là ứng dụng iOS nhận diện khuôn mặt một người, và cho biết người đó là ai.
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/face-recog-ar.gif">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/face-recog-ar.gif" alt="image of face recognize">
 </p>
 
 Tiếp theo, ứng dụng **Chatbot - Speech Regnition**, một ứng dụng Web, nhận diện giọng nói sau đó xử lý để một `chatbot` reply.
@@ -34,8 +34,8 @@ Tiếp theo, ứng dụng **Chatbot - Speech Regnition**, một ứng dụng Web
 
 Cuối cùng là ứng dụng **nhận diện chữ viết tay** (cụ thể là con số), như mọi người đã viết, mỗi người sẽ có cách viết khác nhau, và ứng dụng này vẫn nhận diện được chữ số mà mình viết
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/handwriting.gif">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/handwriting.gif" alt="image of handwriting">
 </p>
 
 Phía trên là 3 ứng dụng mà mình muốn chia sẻ cho mọi người thấy, tất nhiên tất cả đều áp dụng `Machine Learning`. 
@@ -95,8 +95,8 @@ Con người chúng ta, khi chúng ta thực hiện một điều gì đó, cũn
 
 Còn máy móc lúc này thì sao? Máy móc thì đã được con người lập trình, cho nó biết nó phải làm gì *step by step*, con người đưa cho máy móc **instructions**.
 
-<p align="center">
-  <img src="{{site.url}}/public/images/machine-learning/learning.png">
+<p class='p-center'>
+  <img src="{{site.url}}/public/images/machine-learning/learning.png" alt="image of learning">
 </p>
 
 Đối với `Machine Learning`, lúc này con người đã mong muốn máy móc như con người, không còn muốn làm theo những bước đã định nghĩa sẵn. Việc học từ kinh nghiệm của con người đã được áp dụng vào máy móc. Nhưng không giống con người là trải nghiệm dựa trên kinh nghiệm, máy móc sẽ học từ chính `data` mà con người cung cấp, hay `answer` ở phía trên mình có đề cập.
