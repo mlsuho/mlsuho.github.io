@@ -27,3 +27,4 @@ linkedin:         https://www.linkedin.com/in/mlsuho
 plugins:
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-admin
