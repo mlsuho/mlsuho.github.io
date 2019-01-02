@@ -4,6 +4,13 @@ title: About
 ---
 
 <div class='about-me'>
+  <div style='text-align: right;'>
+    {% if page.url == '/about' %} 
+      <form method='get' action='{{site.url}}/public/files/cv-full.pdf'>
+        <input style='background-image: url({{site.url}}/public/images/cloud-storage-download.png);' class='cv-download-button' type='submit' value=''>
+      </form>
+      {% endif %}
+  </div>
   <div class='cv'>
     <div class='cv-header'>
       {% assign cv_header = site.data.cv_header %}
@@ -19,9 +26,16 @@ title: About
       <p id='header-quote'>{{cv_header.quote}}</p>
     </div>
     <div class='cv-section'>
-      {% assign cv_summary = site.data.cv_summary %}
-      <p class='title'><span>{{cv_summary.title}}</span></p>
-      <p>{{cv_summary.detail}}</p>
+      {% assign cv_personal_statement = site.data.cv_personal_statement %}
+      <p class='title'><span>{{cv_personal_statement.title}}</span></p>
+      <p style='text-align: justify'>{{cv_personal_statement.detail}}</p>
+    </div>
+    <div class='cv-section'>
+      {% assign cv_technical_skills = site.data.cv_technical_skills %}
+      <p class='title'><span>{{cv_technical_skills.title}}</span></p>
+      {% for node in cv_technical_skills.detail %}
+        <p><b>{{node.title}}: </b>{{node.detail}}</p>
+      {% endfor %}
     </div>
     <div class='cv-section'>
       {% assign cv_work_experience = site.data.cv_work_experience %}
@@ -30,14 +44,31 @@ title: About
       <div class='cv-row'>
         <div class='cv-col'>
           <p class='cv-node-name'>{{node.name}}</p>
-          <p class='cv-node-title'>{{node.title}}</p>
+          <p  class='cv-node-title'>{{node.title}}</p>
         </div>
         <div class='cv-col text-right'>
           <p class='blue text-italic'>{{node.location}}</p>
           <p class='text-italic'>{{node.time}}</p>
         </div>
       </div>
+      <p style='text-align: justify'>{{node.detail}}</p>
+      {% endfor %}
+    </div>
+    <div class='cv-section'>
+      {% assign cv_contributed_project = site.data.cv_contributed_project %}
+      <p class='title'><span>{{cv_contributed_project.title}}</span></p>
+      {% for node in cv_contributed_project.detail %}
+      <div class='cv-row'>
+          <div class='cv-col'>
+            <p class='cv-node-name'>{{node.name}}</p>
+            <p class='cv-node-title'>{{node.title}}</p>
+          </div>
+          <div class='cv-col text-right'>
+            <p class='blue text-italic'>{{node.time}}</p>
+          </div>
+      </div>
       <p>{{node.detail}}</p>
+      {% if forloop.last == false %} <br> {% endif %}
       {% endfor %}
     </div>
     <div class='cv-section'>
@@ -58,9 +89,20 @@ title: About
       {% endfor %}
     </div>
     <div class='cv-section'>
-      {% assign cv_skill = site.data.cv_skill %}
-      <p class='title'><span>{{cv_skill.title}}</span></p>
-      <p>{{cv_skill.detail}}</p>
+      {% assign cv_cetification = site.data.cv_cetification %}
+      <p class='title'><span>{{cv_cetification.title}}</span></p>
+      {% for node in cv_cetification.detail %}
+      <div class='cv-row'>
+          <div class='cv-col'>
+            <p class='cv-node-name'>{{node.name}}</p>
+            <p class='cv-node-title'>{{node.title}}</p>
+          </div>
+          <div class='cv-col text-right'>
+            <p class='blue text-italic'>{{node.time}}</p>
+          </div>
+      </div>
+      {% if forloop.last == false %} <br> {% endif %}
+      {% endfor %}
     </div>
     <div class='cv-section'>
       {% assign cv_interest = site.data.cv_interest %}

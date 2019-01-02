@@ -3,23 +3,13 @@ detail:
   - name:     'Asian Tech Inc.'
     title:    'Software Engineer'
     location: 'Danang, Vietnam'
-    time:     'Jun 2016 - Nov 2018'
+    time:     'Jun 2016 - Oct 2018'
     detail:   '
-    Technical Skills:<br>
-      <b>·</b>  Integrated MVC, MVVM and VIPER.<br>
-      <b>·</b>  Integrated RESTful API.<br>
-      <b>·</b>  Integrated CI/CD (CircleCI, TravisCI, Fastlane, Deploygate).<br>
-      <b>·</b>  Implemented RxSwift. <br>
-      <b>·</b>  Wrote Unit Test using Quick and Nimble and RxTest.<br>
-      <b>·</b>  Built and integrated a React-Native with Real Estate project.<br>
-      <b>·</b>  Implemented video learning iOS application.<br>
-      <b>·</b>  Integrated Google Analytics/Firebase and Adjust.<br>
-      <b>·</b>  Integrated Vision and CoreML frameworks.<br>
-      <b>·</b>  Implemented Server-side with Vapor framework.<br>
-      <b>·</b>  Implemented Backend (Spring framework) with Finance manage tasks and performance project.<br>
-      <b>·</b>  Implemented Machine Learning with TuriCreate.<br><br>
-    Soft Skills:<br>
+    Here at AsianTech, we have been recoding history since 2014. With our present focus on the Japanese market, we have gained a high standard of quality for software development service for Web & Mobile applications.<br>
+    <b>Technical Skills:</b><br>
+      <b>·</b>  Technical on software development (Mobile, Backend and Infra).<br>
+    <b>Soft Skills:</b><br>
       <b>·</b>  Presentation.<br>
       <b>·</b>  Team Leader.<br>
-      <b>·</b>  Mentor Junior iOS team members.<br>
+      <b>·</b>  Mentor.<br>
     '
