@@ -9,7 +9,7 @@ contact:
     link:     'mailto:contact@mlsuho.me'
     title:    'contact@mlsuho.me'
   - class:    'fas fa-address-card'
-    link:     'http://mlsuho.me'
+    link:     'https://mlsuho.me'
     title:    'mlsuho.me'
   - class:    'fab fa-github-square'
     link:     'https://github.com/mlsuho'
