@@ -3,7 +3,7 @@ permalink:        /:categories/:year/:month/:day/:title
 
 # Setup
 title:            "I'm Su Ho V."
-url:              https://mlsuho.github.io
+url:              https://suho.github.io
 baseurl:          '/'
 description:      'Engineer'
 
@@ -11,18 +11,18 @@ excerpt_separator: '<!--excerpt-->'
 
 author:
   name:           'Su Ho V.'
-  url:            https://github.com/mlsuho
+  url:            https://github.com/suho
 
 paginate:         5
 
 # Custom vars
 version:          1.0.0
 username:         'mlsuho'
-twitter:          https://twitter.com/mlsuho
+twitter:          https://twitter.com/twsuho
 github:
-  base:           https://github.com/mlsuho
-  repo:           https://github.com/mlsuho/mlsuho.github.io
-linkedin:         https://www.linkedin.com/in/mlsuho
+  base:           https://github.com/suho
+  repo:           https://github.com/suho/suho.github.io
+linkedin:         https://www.linkedin.com/in/suho
 
 plugins:
   - jekyll-paginate
