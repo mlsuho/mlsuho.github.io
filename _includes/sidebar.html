@@ -1,42 +1,7 @@
-<div class="sidebar">
-  <div id="particles-js"></div>
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      {% if page.url == '/about' %}
-      <img src="{{site.url}}/public/images/square-avatar-v2.png" alt="Image of my profile" width="160" height="160">
-      {% endif %}
-      <br>
-      <span id="title-typed">{{ site.title }}</span>
-      <p class="lead">{{ site.description }}</p>
-    </div>
-
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="https://blog.suho.dev">Home</a>
-      <a class="sidebar-nav-item{% if page.url == '/about' %} active{% endif %}" href="https://suho.dev/">About</a>
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}
-            </a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </nav>
-    <ul class="social-icons icon-circle list-unstyled list-inline">
-      {% assign social_links = site.data.social %} {% for node in social_links %}
-      <li>
-        <a target="_blank" href="{{ node.link }}">
-          <i class="fab fa-{{ node.class }}"></i>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-    <p>&copy; {{site.time | date: '%Y' }} {{site.author.name}}</p>
-  </div>
-</div>
+<a href="https://blog.suho.dev">
 <div id="menu-button">
   <div class="menu-animate-1"></div>
   <div class="menu-animate-2"></div>
   <div class="menu-animate-3"></div>
 </div>
+</a>
