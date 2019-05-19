@@ -4,7 +4,7 @@ My Github Pages, including blogs and about me.
 
 # Author
 
-Su Ho V. - contact@mlsuho.me
+Su Ho V. - hovansu.it@gmail.com
 
 # Acknowledgements
 

@@ -29,15 +29,15 @@ title: Home
 {% if paginator.total_posts > paginator.per_page %}
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="https://mlsuho.me/page{{paginator.next_page}}">Older</a>
+    <a class="pagination-item older" href="https://blog.suho.dev/page{{paginator.next_page}}">Older</a>
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="https://mlsuho.me">Newer</a>
+      <a class="pagination-item newer" href="https://blog.suho.dev">Newer</a>
     {% else %}
-      <a class="pagination-item newer" href="https://mlsuho.me/page{{paginator.previous_page}}">Newer</a>
+      <a class="pagination-item newer" href="https://blog.suho.dev/page{{paginator.previous_page}}">Newer</a>
     {% endif %}
   {% else %}
     <span class="pagination-item newer">Newer</span>

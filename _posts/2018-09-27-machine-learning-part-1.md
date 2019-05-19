@@ -76,11 +76,11 @@ Bài toán của `Machine Learning` lại khác, chúng ta sẽ không cần qua
 Đối với `Programming`, để xử lý công việc này, mình sẽ define một function có chứa `rules` là: email phải có các kí tự chữ, số, gạch ngang, dấu chấm..., tiếp theo là kí tự @, cuối cùng là một domain. Lúc này, việc tiếp theo, chỉ cần truyền input là một String, nếu đúng như rules thì suy ra String đó là email.
 
 Đối với `Machine Learning`, cái đầu tiên mình cần đó là `answers`. Ví dụ mình sẽ có answers:
-- contact@mlsuho.me là email.
+- contact@suho.dev là email.
 - hovansu.it@gmail.com là email.
 - hovansu8@gmail.com là email.
 - contact@ không phải là email.
-- @mlsuho.me không phải là email.<br>
+- @suho.dev không phải là email.<br>
 ...
 
 Lúc này mình sẽ cung cấp `answers`, việc của `Machine Learning` là lúc mình đưa vào một chuỗi String mới, nó phải dự đoán xem String đó có phải là email hay không. Công việc của developer như mình không cần phải định nghĩa `rules` nữa, đó là của `Machine Learning`.
