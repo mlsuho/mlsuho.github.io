@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Introduction to Machine Learning - Part 3 - Su&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="Sau khoảng thời gian ôn luyện tiếng anh để thi IELTS, giờ mình quay lại để viết những gì còn dang dở 🤣🤣🤣. Cũng hơn 2 tháng mới viết lại một bài, hiệu suất quá kém, mình sẽ cố gắng để viết nhiều hơn">
+<meta name="keywords" content="machine-learning,tech">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to Machine Learning - Part 3">
+<meta property="og:url" content="https://blog.suho.dev/Machine-Learning/introduction-to-machine-learning-part-3/index.html">
+<meta property="og:site_name" content="Su&#39;s Blog">
+<meta property="og:description" content="Sau khoảng thời gian ôn luyện tiếng anh để thi IELTS, giờ mình quay lại để viết những gì còn dang dở 🤣🤣🤣. Cũng hơn 2 tháng mới viết lại một bài, hiệu suất quá kém, mình sẽ cố gắng để viết nhiều hơn">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.suho.dev/gallery/thumbnails/machine-learning-part3.png">
+<meta property="og:updated_time" content="2019-05-23T06:30:43.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduction to Machine Learning - Part 3">
+<meta name="twitter:description" content="Sau khoảng thời gian ôn luyện tiếng anh để thi IELTS, giờ mình quay lại để viết những gì còn dang dở 🤣🤣🤣. Cũng hơn 2 tháng mới viết lại một bài, hiệu suất quá kém, mình sẽ cố gắng để viết nhiều hơn">
+<meta name="twitter:image" content="https://blog.suho.dev/gallery/thumbnails/machine-learning-part3.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png?v=1">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140409446-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140409446-1');
+</script>
+
+
+    
+    
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1327609,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="https://suho.dev">
+            
+                <img src="/images/logo.jpg" alt="Introduction to Machine Learning - Part 3" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part3.png" alt="Introduction to Machine Learning - Part 3">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-12-16T02:00:00.000Z">2018-12-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 minutes read (About 2662 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Introduction to Machine Learning - Part 3
+            
+        </h1>
+        <div class="content">
+            <p>Sau khoảng thời gian ôn luyện tiếng anh để thi IELTS, giờ mình quay lại để viết những gì còn dang dở 🤣🤣🤣. Cũng hơn 2 tháng mới viết lại một bài, hiệu suất quá kém, mình sẽ cố gắng để viết nhiều hơn về technical hay những chia sẻ khác.</p>
+<blockquote>
+<p><a href="/Machine-Learning/introduction-to-machine-learning-part-1/">Introduction to Machine Learing - Part 1</a><br><a href="/Machine-Learning/introduction-to-machine-learning-part-2/">Introduction to Machine Learing - Part 2</a></p>
+</blockquote>
+<p>Ở phần 3 này mình sẽ giới thiệu các <em>loại học</em> có trong Machine Learning. Trong <code>Machine Learning</code>, có rất nhiều cách để giải quyết một bài toán, và dựa vào những dữ liệu đầu vào cũng nhưng yêu cầu của bài toán, người ta đã định nghĩa ra những loại học trong Machine Learning. Hôm nay mình sẽ giới thiệu 2 loại chính là: Supervised Learning và Unsupervised Learning (ngoài ra còn có các loại khác, bài mình sẽ không đề cập nhé, vì kiến thức của mình cũng còn hạn chế).</p>
+<a id="more"></a>
+
+<p>Và để việc chia ra các loại này, người ta đều dựa vào <code>data - dữ liệu</code> để có thể phân loại bài toán cần thiết.</p>
+<p align="center">
+  <img src="/gallery/machine-learning/Image13.jpeg" alt="Categories of Machine Learning" width="80%">
+</p>
+
+<p>Mình sẽ bắt đầu với <code>Supervised Learning</code> nhé.</p>
+<h3 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h3><p>Mình tạm dịch <code>Supervised Learning</code>(SL) sang tiếng việt là <code>Học có giám sát</code>. Như mình đã đề cập ở <a href="/Machine-Learning/introduction-to-machine-learning-part-2/">Part 2</a>, bài toán Machine Learning là bài toán mình đưa dữ liệu vào rồi áp dụng các thuật toán để có <code>model</code>. Vậy tại sao lại dùng từ <code>giám sát</code>, với một bài toán áp dụng các học <code>SL</code> thì dữ liệu chúng ta cung cấp là chúng ta đã biết dữ liệu đầu vào và đầu ra. Do đó chúng ta có thể “giám sát” dữ liệu.</p>
+<p>Để biết rõ hơn về <code>Supervised Learning</code>, về dữ liệu biết đầu vào và đầu ra, mình sẽ đề cập về 2 kĩ thuật chính của cách học này đó là: Classification và Regression.</p>
+<h4 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h4><p>Đầu tiên mình sẽ nói tới <code>Classification</code> (phân loại) trong Supervised Learning. Đây là một trong những kĩ thuật tìm hiểu và nghiên cứu nhiều nhất trong Machine Learning. Sau khi áp dụng kĩ thuật này, <code>model</code> sẽ có khả năng dự đoán các giá trị theo kiểu phân loại.</p>
+<p>Mình sẽ có những ví dụ để mọi người dễ hiểu, những ứng dụng như phân loại chó mèo khi mình cung cấp một hình ảnh về chó hoặc mèo, hay ứng dụng phân biệt loài hoa hồng hay hoa lan, ngoài ra các ứng dụng nhận diện mặt hay đối tượng… các ứng dụng đó đều là các ví dụ sử dụng <code>Classification</code>.</p>
+<p>Để rõ hơn, mình sẽ phân tích một bài toán cụ thể nhé</p>
+<p><strong>Dự đoán giới tính dựa trên chiều cao và cân nặng</strong></p>
+<p>Và dữ liệu của bài toán</p>
+<p><img src="/gallery/machine-learning/Image14.jpeg" alt="Data of Example"></p>
+<p>Giờ bắt đầu phân tích một chút nhé, với bài toán này, theo yêu cầu, thì đầu vào của chúng ta sẽ là <code>chiều cao</code> và <code>cân nặng</code> còn đầu ra sẽ là <code>giới tính</code>.</p>
+<p>Tiếp theo khi nhìn vào tập dữ liệu để train, thì chúng ta đã có đầy đủ input và output. Vậy ở đây <code>loại học</code> mình sẽ áp dụng là <code>Supervised Learning</code>.</p>
+<p>Sau đó nhìn vào <code>output</code> mình sẽ thấy giới tính ở đây chỉ có <code>Nam</code> hoặc <code>Nữ</code>, đây là phân loại giới tính, nên kĩ thuật mình dùng sẽ là <code>Classification</code>.</p>
+<p>Sau khi có bài toán và dữ liệu thì chúng ta có thể phân tích được kĩ thuật mà mình sử dụng sẽ là gì.</p>
+<p>Khi nhắc tới <code>Machine Learning</code> thì mình không thể nhắc tới thuật toán của mỗi kĩ thuật.</p>
+<p>Với Classification, mình xin giới thiệu tới mọi người một vài thuật toán, nếu mọi người thích thì có thể tìm hiểu để áp dụng vào bài toán của mình</p>
+<p>Các thuật toán:</p>
+<ul>
+<li>Support vector machine (SVM)</li>
+<li>Decision tree</li>
+<li>K-nearest neighbor</li>
+<li>Naïve Bayes</li>
+<li>Neural networks</li>
+</ul>
+<h4 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h4><p>Một kĩ thuật thứ hai trong <code>Supervised Learning</code> là <code>Regression</code> (Hồi Quy). Khác với <code>Classification</code> kĩ thuật này áp dụng cho những bài toán có model dự đoán những giá trị thực (những con số). Mình sẽ đề cập chi tiết ở ví dụ để mọi người hiểu rõ hơn.</p>
+<p>Những ứng dụng có sử dụng kĩ thuật này: Dự đoán tuổi dựa trên hình ảnh, hay ứng dụng dự đoán nhiệt độ của ngày mai.</p>
+<p>Để mọi người hiểu rõ hơn thì mình sẽ có ví dụ như thế này</p>
+<p><strong>Dự đoán cân nặng dựa trên chiều cao</strong></p>
+<p><img src="/gallery/machine-learning/Image15.jpeg" alt="Data of Classification Example"></p>
+<p>Ta sẽ phân tích bài toán và dữ liệu train để chọn kĩ thuật nhé.</p>
+<p>Đầu tiên, bài toán này với input là <code>chiều cao</code> và output là <code>cân nặng</code>. Dựa vào dữ liệu train, ta đều thấy input và output của dữ liệu, nên chúng ta sẽ áp dụng cách học <code>Supervised Learning</code>. Tiếp theo để ý output của dữ liệu, không giống ở ví dụ của phần <code>Classifiation</code>, output là giới tính <code>Nam</code> hoặc <code>Nữ</code>, ở ví dụ này, output là một <code>con số</code>, và mình không biết trước cụ thể về output. Khi gặp bài toán và dữ liệu này, mình sẽ áp dụng kĩ thuật <code>Regression</code></p>
+<p>Và các thuật toán trong Regression là:</p>
+<ul>
+<li>Linear / Nonlinear model</li>
+<li>Regularization</li>
+<li>Stepwise regression</li>
+<li>Bagged decision trees</li>
+<li>Neural networks</li>
+</ul>
+<h3 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h3><p>Tiếp theo chúng ta sẽ qua loại học thứ hai là Học không giám sát - Unsupervised Learning. Về phần này thì mình chưa làm + chưa có kinh nghiệm nên chỉ có thể chia sẻ kiến thức lý thuyết mà mình hiểu được về nó, rồi chia sẻ cho mọi người cùng biết.</p>
+<p>Đầu tiên, <code>Unsupervised Learning</code> ngược lại với Supervised Learning, nó không hướng tới việc tìm một <code>correct output</code>. Vậy <code>model</code> khi sử dụng <code>Unsupervised Learning</code> thì đưa ra output gì? Model này hướng tới việc tìm ra các structure, relationshiprelationship ẩn sâu trong dữ liệu mà ta không thấy được.</p>
+<p>Và một điều đặt biết của tập dữ liệu train sẽ không có đầu ra, mình chỉ cung cấp dữ liệu có đầu vào.</p>
+<p>Và kĩ thuật thường được sử dụng trong Unsupervised Learning là <code>Clustering</code> (Phân cụm).</p>
+<p>Ví dụ một chút nhé, mình đang bán một mặt hàng, như <code>cây bút</code> và khách hàng của mình là khác nhau, từ học sinh, sinh viên hay doanh nhân. Sau khi mua hàng của mình, mình sẽ có dữ liệu của khách hàng. Sau đó mình áp dụng <code>Unsupervised Learning</code> vào dữ liệu của mình, có thể mình sẽ tìm ra điểm chung của khách hàng của mình, rồi từ điểm chung đó, mình sẽ quảng cáo tới những người khác dựa vào điểm chung đó, vừa nâng cao lợi nhuận vừa tiết kiếm chi phí quảng cáo.</p>
+<h4 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h4><p>Tiếp theo mình sẽ nói về kĩ thuật <code>Clustering</code> (Phân cụm) trong Unsupervised Learning.</p>
+<p>Kĩ thuật này dùng để phân nhóm toàn bộ dữ liệu thành các nhóm nhỏ khác nhau dựa vào sự liên quan về tính chất các dữ liệu về các nhóm</p>
+<p>Mình sẽ có hình ảnh ví dụ về ứng dụng nhận dạng số</p>
+<p><img src="/gallery/machine-learning/Image16.png" alt="Cluster Example"></p>
+<p>Nguồn <a href="https://datascienceplus.com/multi-dimensional-reduction-and-visualisation-with-t-sne/" target="_blank" rel="noopener">datascienceplus</a></p>
+<p>Ở đây, đầu vào dữ liệu là mình cung cấp các số mà mình không cho biết đó là số nào, thông qua kĩ thuật Cluster, nó sẽ tự phân loại gần như chính xác các số đó dựa trên các nét vẽ của các chữ số đó. (có thể sẽ có một sai số như hình phía trên)</p>
+<p>Mình sẽ chia sẻ thêm một vài thuật toán của kĩ thuật Clustering:</p>
+<ul>
+<li>K-means and k-medoids</li>
+<li>Hierarchical clustering</li>
+<li>Gaussian mixture models</li>
+<li>Hidden Markov models</li>
+<li>Fuzzy c-means clustering</li>
+</ul>
+<p>Tới đây là mình đã kết thúc phần 3 cũng như chuỗi bài về <code>Introduction to Machine Learning</code>. Cảm ơn mọi người đã theo dõi. Có gì thắc mắc hoặc bài viết mình sai xót, mọi người cứ bình luận.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/machine-learning/">machine-learning</a>, <a class="has-link-grey -link" href="/tags/tech/">tech</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="hovansu.it@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/Machine-Learning/introduction-to-machine-learning-part-2/">
+                <span class="level-item">Introduction to Machine Learning - Part 2</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="Van Su Ho">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Van Su Ho
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Software Engineer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Vietnam</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Category
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        1
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/suho" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/suho">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com/mlsuho">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/twsuho">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Supervised-Learning">
+        <span class="has-mr-6">1</span>
+        <span>Supervised Learning</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Classification">
+        <span class="has-mr-6">1.1</span>
+        <span>Classification</span>
+        </a></li><li>
+        <a class="is-flex" href="#Regression">
+        <span class="has-mr-6">1.2</span>
+        <span>Regression</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Unsupervised-Learning">
+        <span class="has-mr-6">2</span>
+        <span>Unsupervised Learning</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Clustering">
+        <span class="has-mr-6">2.1</span>
+        <span>Clustering</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Machine-Learning/">
+            <span class="level-start">
+                <span class="level-item">Machine Learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/machine-learning/" style="font-size: 10px;">machine-learning</a> <a href="/tags/tech/" style="font-size: 10px;">tech</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part3.png" alt="Introduction to Machine Learning - Part 3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-16T02:00:00.000Z">2018-12-16</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part2.png" alt="Introduction to Machine Learning - Part 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-09T02:00:00.000Z">2018-10-09</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part1.png" alt="Introduction to Machine Learning - Part 1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-27T02:00:00.000Z">2018-09-27</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/machine-learning/">
+                        <span class="tag">machine-learning</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tech/">
+                        <span class="tag">tech</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part3.png" alt="Introduction to Machine Learning - Part 3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-16T02:00:00.000Z">2018-12-16</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part2.png" alt="Introduction to Machine Learning - Part 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-09T02:00:00.000Z">2018-10-09</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part1.png" alt="Introduction to Machine Learning - Part 1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-27T02:00:00.000Z">2018-09-27</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/machine-learning/">
+                        <span class="tag">machine-learning</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tech/">
+                        <span class="tag">tech</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="https://suho.dev">
+                
+                    <img src="/images/logo.jpg" alt="Introduction to Machine Learning - Part 3" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Su Ho&nbsp;
+                <br>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="GitHub" href="https://github.com/suho">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

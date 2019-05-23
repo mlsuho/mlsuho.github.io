@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Introduction to Machine Learning - Part 1 - Su&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="Chào mọi người, đây là bài blog đầu tiên trong sự nghiệp viết lách của mình, hy vọng sẽ mang lại kiến thức cho mọi người. Giới thiệu về mình một chút, mình tên là Sự, mình bắt đầu với iOS, sau này thì">
+<meta name="keywords" content="machine-learning,tech">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to Machine Learning - Part 1">
+<meta property="og:url" content="https://blog.suho.dev/Machine-Learning/introduction-to-machine-learning-part-1/index.html">
+<meta property="og:site_name" content="Su&#39;s Blog">
+<meta property="og:description" content="Chào mọi người, đây là bài blog đầu tiên trong sự nghiệp viết lách của mình, hy vọng sẽ mang lại kiến thức cho mọi người. Giới thiệu về mình một chút, mình tên là Sự, mình bắt đầu với iOS, sau này thì">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://blog.suho.dev/gallery/thumbnails/machine-learning-part1.png">
+<meta property="og:updated_time" content="2019-05-23T06:20:55.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduction to Machine Learning - Part 1">
+<meta name="twitter:description" content="Chào mọi người, đây là bài blog đầu tiên trong sự nghiệp viết lách của mình, hy vọng sẽ mang lại kiến thức cho mọi người. Giới thiệu về mình một chút, mình tên là Sự, mình bắt đầu với iOS, sau này thì">
+<meta name="twitter:image" content="https://blog.suho.dev/gallery/thumbnails/machine-learning-part1.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png?v=1">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140409446-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140409446-1');
+</script>
+
+
+    
+    
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1327609,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="https://suho.dev">
+            
+                <img src="/images/logo.jpg" alt="Introduction to Machine Learning - Part 1" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part1.png" alt="Introduction to Machine Learning - Part 1">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-27T02:00:00.000Z">2018-09-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    20 minutes read (About 2930 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Introduction to Machine Learning - Part 1
+            
+        </h1>
+        <div class="content">
+            <p>Chào mọi người, đây là bài blog đầu tiên trong sự nghiệp viết lách của mình, hy vọng sẽ mang lại kiến thức cho mọi người.</p>
+<p>Giới thiệu về mình một chút, mình tên là Sự, mình bắt đầu với iOS, sau này thì có vọc thêm nhiều thứ. Mọi người muốn xem chi tiết về mình thì của sang trang <a href="https://cv.suho.dev" target="_blank" rel="noopener">CV</a> nhé. Ý định viết blog cũng xuất hiện trong đầu rất là lâu rồi, bây giờ mới ngồi viết một cách nghiêm túc. Thôi tránh lan man, mình đi vào chủ đề chính nhé 😉</p>
+<a id="more"></a>
+
+<blockquote>
+<p>Vì nội dung mình muốn chia sẻ hơi nhiều, nên mình đã tách ra nhiều Part, các bạn nhớ theo dõi nhé, cảm ơn các bạn.</p>
+</blockquote>
+<h3 id="Why-this-topic"><a href="#Why-this-topic" class="headerlink" title="Why this topic?"></a>Why this topic?</h3><p>Mình tìm hiểu <code>Machine Learning</code> trong vòng 5 tháng trở lại đây, và để có cái gọi là <code>output</code> trong 5 tháng, thì mình và một anh cùng team research đã trình bày topic <strong>Introduction to Machine Learning</strong> trước công ty, người tham gia buổi chia sẻ của tụi mình gần 80 người. Sau khi trình bày xong, giờ mình chọn nó cho bài blog đầu tiên của mình. Và tất nhiên là sườn của bài blog sẽ giống trong slide 😈😈😈</p>
+<p>Đây là poster mà phía công ty đã tạo ra cho tụi mình, và mình đứa ở phía trên:<br><img src="/gallery/machine-learning/Image1.png" alt="Poster"></p>
+<h2 id="Some-interesting-applications"><a href="#Some-interesting-applications" class="headerlink" title="Some interesting applications"></a>Some interesting applications</h2><p>Trước khi giới thiệu về <code>Machine Learning</code>, mình sẽ show cho mọi người một vài ứng dụng</p>
+<p>Đầu tiên, ứng dụng <strong>Face Recognition in ARKit</strong>, đây là ứng dụng iOS nhận diện khuôn mặt một người, và cho biết người đó là ai.</p>
+<p align="center">
+  <img src="/gallery/machine-learning/Image2.gif" alt="Face Recognize App">
+</p>
+
+<p>Tiếp theo, ứng dụng <strong>Chatbot - Speech Regnition</strong>, một ứng dụng Web, nhận diện giọng nói sau đó xử lý để một <code>chatbot</code> reply.</p>
+<p><img src="/gallery/machine-learning/Image3.gif" alt="Chatbot - Speech Regnition"></p>
+<p>Cuối cùng là ứng dụng <strong>nhận diện chữ viết tay</strong> (cụ thể là con số), như mọi người đã viết, mỗi người sẽ có cách viết khác nhau, và ứng dụng này vẫn nhận diện được chữ số mà mình viết</p>
+<p align="center">
+  <img src="/gallery/machine-learning/Image4.gif" alt="Handwriting App">
+</p>
+
+<p>Phía trên là 3 ứng dụng mà mình muốn chia sẻ cho mọi người thấy, tất nhiên tất cả đều áp dụng <code>Machine Learning</code>. </p>
+<p>Vậy câu hỏi đặt ra là tại sao Machine Learning nó lại được nhắc đến nhiều như vậy tại thời điểm hiện tại, cũng như việc áp dụng Machine Learning vào các ứng dụng cũng không phải là ít 🤔🤔🤔 ??!!??</p>
+<h2 id="Why-is-Machine-Learning-trending-now"><a href="#Why-is-Machine-Learning-trending-now" class="headerlink" title="Why is Machine Learning trending now?"></a>Why is Machine Learning trending now?</h2><p>Ở đây mình có 3 ý muốn chia sẻ tới mọi người.</p>
+<p>Thứ nhất, việc <code>phần cứng - hardware</code> tại thời điểm hiện tại đã đủ đáp ứng cho Machine Learning. Theo một vài thông tin mà mình đã đọc, thì phần cứng đã hỗ trợ cho những ứng dụng Machine Learning làm các công việc chỉ tốn thời gian 1 ~ 2 tuần, trong khi nếu không có Machine Learning thì có thể mất tới 10 tháng.</p>
+<p>Thứ hai, <code>dữ liệu - data</code> ngày nay có một số lượng rất là lớn, và tất nhiên nó chứa đựng một khối lượng tri thức cực kỳ lớn mà con người muốn khám phá, và công cụ để khám phá nó là gì? Chính là <code>Machine Learning</code>.</p>
+<p>Cuối cùng, Machine Learning đã mang lại những <code>ứng dụng thực tế</code> hết sức <code>hữu ích</code> cũng như giải quyết ở nhiều lĩnh vực như: Sinh học, Tài chính, Xử lý ngôn ngữ tự nhiên, Hệ thống recommendation, Thị giác máy tính, xủ lý hình ảnh,…</p>
+<h2 id="What-is-Machine-Learning"><a href="#What-is-Machine-Learning" class="headerlink" title="What is Machine Learning?"></a>What is Machine Learning?</h2><p>Nãy giờ đã nói quá nhiều về những lợi ích mà Machine Learning mang lại cũng như các ứng dụng của nó, giờ mình bắt đầu với câu hỏi kinh điển <code>Machine Learning là gì?</code></p>
+<h3 id="Programming-vs-Machine-Learning"><a href="#Programming-vs-Machine-Learning" class="headerlink" title="Programming vs Machine Learning"></a>Programming vs Machine Learning</h3><p>Trước khi nói về định nghĩa của nó, mình quay trở lại một chút với <code>Programming</code></p>
+<p><img src="/gallery/machine-learning/Image5.png" alt="What is Programming"></p>
+<p>Như ở hình trên, mọi người có thể thấy được, đối với lập trình bình thường, khi bắt đầu định nghĩa một công việc nào đó, thì mình sẽ sử dụng những luật lệ hay yêu cầu cụ thể để định nghĩa, rồi sau đó, mình đưa <strong>input (data)</strong> vào, công việc đó sẽ đánh giá input dựa trên những <strong>yêu cầu (rules)</strong> và sẽ đưa ra <strong>output (answer)</strong>.</p>
+<p>Nhưng khác với <code>Programming</code>, đối với <code>Machine Learning</code> thì sẽ có mô hình như sau:</p>
+<p><img src="/gallery/machine-learning/Image6.png" alt="Machine Learning Flow"></p>
+<p>Bài toán của <code>Machine Learning</code> lại khác, chúng ta sẽ không cần quan tâm <strong>rules</strong> sẽ là gì, khi bắt đầu định nghĩa một công việc của bài toán Machine Learning thì chúng ta chỉ cần cung cấp một lượng lớn các <strong>answers</strong> và <strong>data</strong>, để từ đó, Machine Learning sẽ học từ các answers để suy ra <code>rules</code>. Lúc này mình đưa vào <code>input</code> và công việc sẽ dự đoán <code>output</code>.</p>
+<p>Để mọi người dễ hiểu hơn về <code>Programming</code> và <code>Machine Learning</code>, mình sẽ đưa ra một ví dụ cụ thể, bài toán của mình là:</p>
+<blockquote>
+<p>Đầu vào là một String, đầu ra là câu trả lời String đó có phải là email hay không (bài toán verify email).</p>
+</blockquote>
+<p>Đối với <code>Programming</code>, để xử lý công việc này, mình sẽ define một function có chứa <code>rules</code> là: email phải có các kí tự chữ, số, gạch ngang, dấu chấm…, tiếp theo là kí tự @, cuối cùng là một domain. Lúc này, việc tiếp theo, chỉ cần truyền input là một String, nếu đúng như rules thì suy ra String đó là email.</p>
+<p>Đối với <code>Machine Learning</code>, cái đầu tiên mình cần đó là <code>answers</code>. Ví dụ mình sẽ có answers:</p>
+<ul>
+<li><a href="mailto:contact@mlsuho.me" target="_blank" rel="noopener">contact@mlsuho.me</a> là email.</li>
+<li><a href="mailto:hovansu.it@gmail.com" target="_blank" rel="noopener">hovansu.it@gmail.com</a> là email.</li>
+<li><a href="mailto:hovansu8@gmail.com" target="_blank" rel="noopener">hovansu8@gmail.com</a> là email.</li>
+<li>contact@ không phải là email.</li>
+<li>@mlsuho.me không phải là email.<br><br>…</li>
+</ul>
+<p>Lúc này mình sẽ cung cấp <code>answers</code>, việc của <code>Machine Learning</code> là lúc mình đưa vào một chuỗi String mới, nó phải dự đoán xem String đó có phải là email hay không. Công việc của developer như mình không cần phải định nghĩa <code>rules</code> nữa, đó là của <code>Machine Learning</code>.</p>
+<h3 id="Human-vs-Machine-Learning"><a href="#Human-vs-Machine-Learning" class="headerlink" title="Human vs Machine Learning"></a>Human vs Machine Learning</h3><p>Mình đã hiểu hơn một chút về <code>Machine Learning</code> thông qua <code>Programming</code>. Để mọi người nắm thêm về Machine Learning, mình xin chia sẻ thêm một cách giải thích về nó mà mình lượm lặt được.</p>
+<p>Đầu tiên, cái gì xuất hiện cũng có mục đích của nó. Machine Learning xuất hiện cho bước đầu mong muốn làm ra những cỗ máy có thể thay thế con người.</p>
+<p>Con người chúng ta, khi chúng ta thực hiện một điều gì đó, cũng đều dựa trên <code>kinh nghiệm (experience)</code> mà ta có được, và để có kinh nghiệm thì chúng ta phải <code>học</code>. Ví dụ lúc còn nhỏ, để học chữ <strong>A</strong>, ta phải được bố mẹ dạy, chúng ta sẽ tiếp xúc với nhiều chữ A (học được nhiều chữ A hơn), lúc này <strong>kinh nghiệm</strong> về chữ <strong>A</strong> của mình nhiều hơn, nên bây giờ nhìn bất kì chữ <strong>A</strong> mới nào, chúng ta cũng biết.</p>
+<p>Còn máy móc lúc này thì sao? Máy móc thì đã được con người lập trình, cho nó biết nó phải làm gì <em>step by step</em>, con người đưa cho máy móc <strong>instructions</strong>.</p>
+<p align="center">
+  <img src="/gallery/machine-learning/Image7.png" alt="Learning in Machine Learning">
+</p>
+
+<p>Đối với <code>Machine Learning</code>, lúc này con người đã mong muốn máy móc như con người, không còn muốn làm theo những bước đã định nghĩa sẵn. Việc học từ kinh nghiệm của con người đã được áp dụng vào máy móc. Nhưng không giống con người là trải nghiệm dựa trên kinh nghiệm, máy móc sẽ học từ chính <code>data</code> mà con người cung cấp, hay <code>answer</code> ở phía trên mình có đề cập.</p>
+<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>Nãy giờ mình đã đề cập tới <strong>Programming</strong>, <strong>Human</strong> và <strong>Machine Learning</strong> bằng những cách hiểu của mình. Giờ mình đưa ra khái niệm của Machine Learning của Arthur Samuel - một nhà khoa học máy tính, người đã cho ra đời khái niệm <code>Machine Learning</code></p>
+<blockquote>
+<p>“The field of study that gives computers the ability to learn without being explicitly programmed” - Arthur Samuel </p>
+</blockquote>
+<p>Tạm dịch là: <code>Machine Learning</code> là một lĩnh vực trong khoa học máy tính, có khả năng <code>tự học</code> dựa trên <code>dữ liệu</code> được đưa vào mà không cần phải lập trình cụ thể.</p>
+<p>Vậy là mình giới thiệu xong cho mọi người về <code>Machine Learning</code> là gì. Chắc <strong>Part 1</strong> sẽ dừng lại ở đây, mình thấy hơi dài rồi. Hẹn gặp lại mọi người ở <a href="/Machine-Learning/introduction-to-machine-learning-part-2/">Part 2</a> với những nội dung hấp dẫn hơn 😘😘😘</p>
+<p>Một vài hình ảnh lấy từ các trang web:<br><a href="https://github.com/NovaTecConsulting/FaceRecognition-in-ARKit" target="_blank" rel="noopener">Face Recognition in ARKit</a><br><a href="/gallery/machine-learning/Image3.gif">Chatbot - Speech Regnition</a><br><a href="https://medium.com/@cafielo/build-a-handwritten-digit-recognition-model-with-keras-b8733274574c" target="_blank" rel="noopener">Build a Handwritten</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/machine-learning/">machine-learning</a>, <a class="has-link-grey -link" href="/tags/tech/">tech</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="hovansu.it@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/Machine-Learning/introduction-to-machine-learning-part-2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Introduction to Machine Learning - Part 2</span>
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="Van Su Ho">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Van Su Ho
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Software Engineer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Vietnam</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Category
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        1
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/suho" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/suho">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com/mlsuho">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/twsuho">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><ul class="menu-list"><li>
+        <a class="is-flex" href="#Why-this-topic">
+        <span class="has-mr-6">1.1</span>
+        <span>Why this topic?</span>
+        </a></li></ul><li>
+        <a class="is-flex" href="#Some-interesting-applications">
+        <span class="has-mr-6">2</span>
+        <span>Some interesting applications</span>
+        </a></li><li>
+        <a class="is-flex" href="#Why-is-Machine-Learning-trending-now">
+        <span class="has-mr-6">3</span>
+        <span>Why is Machine Learning trending now?</span>
+        </a></li><li>
+        <a class="is-flex" href="#What-is-Machine-Learning">
+        <span class="has-mr-6">4</span>
+        <span>What is Machine Learning?</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Programming-vs-Machine-Learning">
+        <span class="has-mr-6">4.1</span>
+        <span>Programming vs Machine Learning</span>
+        </a></li><li>
+        <a class="is-flex" href="#Human-vs-Machine-Learning">
+        <span class="has-mr-6">4.2</span>
+        <span>Human vs Machine Learning</span>
+        </a></li><li>
+        <a class="is-flex" href="#Definition">
+        <span class="has-mr-6">4.3</span>
+        <span>Definition</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Machine-Learning/">
+            <span class="level-start">
+                <span class="level-item">Machine Learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/machine-learning/" style="font-size: 10px;">machine-learning</a> <a href="/tags/tech/" style="font-size: 10px;">tech</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part3.png" alt="Introduction to Machine Learning - Part 3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-16T02:00:00.000Z">2018-12-16</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part2.png" alt="Introduction to Machine Learning - Part 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-09T02:00:00.000Z">2018-10-09</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part1.png" alt="Introduction to Machine Learning - Part 1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-27T02:00:00.000Z">2018-09-27</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/machine-learning/">
+                        <span class="tag">machine-learning</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tech/">
+                        <span class="tag">tech</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part3.png" alt="Introduction to Machine Learning - Part 3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-16T02:00:00.000Z">2018-12-16</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-3/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part2.png" alt="Introduction to Machine Learning - Part 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-09T02:00:00.000Z">2018-10-09</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-2/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/machine-learning-part1.png" alt="Introduction to Machine Learning - Part 1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-27T02:00:00.000Z">2018-09-27</time></div>
+                    <a href="/Machine-Learning/introduction-to-machine-learning-part-1/" class="has-link-black-ter is-size-6">Introduction to Machine Learning - Part 1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Machine-Learning/">Machine Learning</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/machine-learning/">
+                        <span class="tag">machine-learning</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tech/">
+                        <span class="tag">tech</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="https://suho.dev">
+                
+                    <img src="/images/logo.jpg" alt="Introduction to Machine Learning - Part 1" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Su Ho&nbsp;
+                <br>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="GitHub" href="https://github.com/suho">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
