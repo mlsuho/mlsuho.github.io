@@ -54,7 +54,7 @@ search:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment
 comment:
     # Name of the comment plugin
-    type: 
+    type: facebook
 # Donation entries
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Donation/
 donate:
@@ -69,7 +69,7 @@ donate:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share
 share:
     # Share plugin name
-    type: 
+    type: sharejs
 # Sidebar settings.
 # Please be noted that a sidebar is only visible when it has at least one widget
 sidebar:
