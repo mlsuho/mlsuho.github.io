@@ -788,5 +788,5 @@ We’ve covered basic branching and merging in Git. You should feel comfortable 
 [Image 22]: /gallery/backend/chapter1/Image22.png
 [Image 23]: /gallery/backend/chapter1/Image23.png
 [Image 24]: /gallery/backend/chapter1/Image24.png
-[Image 25]: /gallery/backend/chapter1/Image25.png
-[Image 26]: /gallery/backend/chapter1/Image26.png
+[Image 25]: /gallery/backend/chapter1/Image25.jpg
+[Image 26]: /gallery/backend/chapter1/Image26.jpg
