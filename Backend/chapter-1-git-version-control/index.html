@@ -16,7 +16,7 @@
 <meta property="og:description" content="Everything you need to know about git.  Thanks to Scott Chacon and Ben Straub, authors of the book Pro Git  In this chapter, I will show basic knowledges from Pro Git book, if you want more detail, yo">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://blog.suho.dev/gallery/thumbnails/git.png">
-<meta property="og:updated_time" content="2019-05-27T05:12:47.625Z">
+<meta property="og:updated_time" content="2019-05-27T06:20:42.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 1 - Git - Version Control">
 <meta name="twitter:description" content="Everything you need to know about git.  Thanks to Scott Chacon and Ben Straub, authors of the book Pro Git  In this chapter, I will show basic knowledges from Pro Git book, if you want more detail, yo">
@@ -544,14 +544,14 @@
 <p>Let’s say you decide to pull in your server branch as well. You can rebase the server branch onto the <code>master</code> branch without having to check it out first by running <code>git rebase &lt;basebranch&gt; &lt;topicbranch&gt;</code> — which checks out the topic branch (in this case, <code>server</code>) for you and replays it onto the base branch (<code>master</code>):</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase master server</span><br></pre></td></tr></table></figure>
 
-<p><img src="/gallery/backend/chapter1/Image25.png" alt="Image 25"></p>
+<p><img src="/gallery/backend/chapter1/Image25.jpg" alt="Image 25"></p>
 <p>Then, you can fast-forward the base branch (<code>master</code>):</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge server</span><br></pre></td></tr></table></figure>
 
 <p>You can remove the client and server branches because all the work is integrated and you don’t need them anymore</p>
 <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d client</span><br><span class="line">$ git branch -d server</span><br></pre></td></tr></table></figure>
 
-<p><img src="/gallery/backend/chapter1/Image26.png" alt="Image 26"></p>
+<p><img src="/gallery/backend/chapter1/Image26.jpg" alt="Image 26"></p>
 <h4 id="The-Perils-of-Rebasing"><a href="#The-Perils-of-Rebasing" class="headerlink" title="The Perils of Rebasing"></a>The Perils of Rebasing</h4><p>Ahh, but the bliss of rebasing isn’t without its drawbacks, which can be summed up in a single line:</p>
 <p><strong>Do not rebase commits that exist outside your repository and people may have based work on them.</strong></p>
 <p>If you follow that guideline, you’ll be fine. If you don’t, people will hate you, and you’ll be scorned by friends and family.</p>
