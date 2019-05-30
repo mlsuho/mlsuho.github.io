@@ -11,9 +11,7 @@ categories:
 - Backend
 ---
 
-## Navigating the File System
-
-### The Command Line
+## The Command Line
 
 The command line is a text interface for your computer. It's a program that takes in commands, which it passes on to the computer's operating system to run.
 
@@ -21,9 +19,37 @@ From the command line, you can navigate through files and folders on your comput
 
 The advantage of using the command line is its power. You can run programs, write scripts to automate common tasks, and combine simple commands to handle difficult tasks – making it an important programming tool.
 
-### Navigation
+<!-- more -->
 
-#### ls
+## Command Line Interface Setup
+
+The command line is a powerful tool used by developers to find, create, and manipulate files and folders.
+
+Command Line Interfaces (CLIs) come in many forms. The CLI we'll use is called Bash.
+
+### What is Bash?
+
+**Bash**, or the **B**ourne-**A**gain **SH**ell, is a CLI that was created over twenty-seven years ago by Brian Fox as a free software replacement for the Bourne Shell. 
+
+A **shell** is a specific kind of CLI. Bash is "open source" which means that anyone can read the code and suggest changes. Since its beginning, it has been supported by a large community of engineers who have worked to make it an incredible tool. Bash is the default shell for Linux and Mac. 
+
+For these reasons, Bash is the most used and widely distributed shell. If you want to learn more about Bash, this [Wikipedia article][Wiki] is a good place to start.
+
+### Bash Setup for Mac
+
+Bash is the default shell on Linux and Mac OS X, so good news, you don't have to install anything!
+
+To access Bash in OS X, you can use an application called **Terminal**.
+
+1. First open the **Applications** folder, then open the **Utilities** folder.
+
+2. Once you're in the **Utilities** folder you will see the application **Terminal**. Open the **Terminal** application and you're ready to go!
+
+3. For ease of access later, you can keep **Terminal** in your **Dock**. Simply right click (alt-click) the Terminal icon in your dock, then select "Options", then "Keep In Dock."
+
+## Navigating the File System
+
+### ls
 
 ```bash
 $ ls
@@ -31,7 +57,7 @@ $ ls
 
 ls - list files in current path working directory. This one is probably the most useful one. The command line looks at the folder you are in, and then "lists" the files and folders inside it.
 
-#### Filesystem
+### Filesystem
 
 ![Image 1]
 
@@ -41,7 +67,7 @@ A filesystem organizes a computer's files and directories into a tree structure:
 2. Each parent directory can contain more child directories and files. Here blog/ is the parent of 2014/, 2015/, and hardware.txt.
 3. Each directory can contain more files and child directories. The parent-child relationship continues as long as directories and files are nested.
 
-#### pwd
+### pwd
 
 ```bash
 $ pwd
@@ -51,7 +77,7 @@ pwd stands for "print working directory". It outputs the name of the directory y
 
 Together with `ls`, the `pwd` command is useful to show where you are in the filesystem.
 
-#### cd
+### cd
 
 ```bash
 $ cd [name]
@@ -67,7 +93,7 @@ $ cd ..
 
 To move up one directory, use `cd ..`
 
-#### mkdir
+### mkdir
 
 ```bash
 $ mkdir [name]
@@ -75,39 +101,13 @@ $ mkdir [name]
 
 The `mkdir` command stands for **"make directory"**. It takes in a directory name as an argument, and then creates a new directory in the current working directory.
 
-#### touch
+### touch
 
 ```bash
 $ touch [name]
 ```
 
 The `touch` command creates a new file inside the working directory. It takes in a filename as an argument, and then creates an empty file in the current working directory.
-
-### Command Line Interface Setup
-
-The command line is a powerful tool used by developers to find, create, and manipulate files and folders.
-
-Command Line Interfaces (CLIs) come in many forms. The CLI we'll use is called Bash.
-
-#### What is Bash?
-
-**Bash**, or the **B**ourne-**A**gain **SH**ell, is a CLI that was created over twenty-seven years ago by Brian Fox as a free software replacement for the Bourne Shell. 
-
-A **shell** is a specific kind of CLI. Bash is "open source" which means that anyone can read the code and suggest changes. Since its beginning, it has been supported by a large community of engineers who have worked to make it an incredible tool. Bash is the default shell for Linux and Mac. 
-
-For these reasons, Bash is the most used and widely distributed shell. If you want to learn more about Bash, this [Wikipedia article][Wiki] is a good place to start.
-
-#### Bash Setup for Mac
-
-Bash is the default shell on Linux and Mac OS X, so good news, you don't have to install anything!
-
-To access Bash in OS X, you can use an application called **Terminal**.
-
-1. First open the **Applications** folder, then open the **Utilities** folder.
-
-2. Once you're in the **Utilities** folder you will see the application **Terminal**. Open the **Terminal** application and you're ready to go!
-
-3. For ease of access later, you can keep **Terminal** in your **Dock**. Simply right click (alt-click) the Terminal icon in your dock, then select "Options", then "Keep In Dock."
 
 ## Viewing and Changing the File System
 
