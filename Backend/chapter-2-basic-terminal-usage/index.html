@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Navigating the File SystemThe Command LineThe command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. F">
+    <meta name="description" content="The Command LineThe command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. From the command line, you">
 <meta name="keywords" content="backend,tech,terminal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chapter 2 - Basic Terminal Usage">
 <meta property="og:url" content="https://blog.suho.dev/Backend/chapter-2-basic-terminal-usage/index.html">
 <meta property="og:site_name" content="Su&#39;s Blog">
-<meta property="og:description" content="Navigating the File SystemThe Command LineThe command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. F">
+<meta property="og:description" content="The Command LineThe command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. From the command line, you">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://blog.suho.dev/gallery/thumbnails/terminal.png">
-<meta property="og:updated_time" content="2019-05-30T18:12:28.831Z">
+<meta property="og:updated_time" content="2019-05-30T18:20:56.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 - Basic Terminal Usage">
-<meta name="twitter:description" content="Navigating the File SystemThe Command LineThe command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. F">
+<meta name="twitter:description" content="The Command LineThe command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. From the command line, you">
 <meta name="twitter:image" content="https://blog.suho.dev/gallery/thumbnails/terminal.png">
 
 
@@ -185,42 +185,17 @@
             
         </h1>
         <div class="content">
-            <h2 id="Navigating-the-File-System"><a href="#Navigating-the-File-System" class="headerlink" title="Navigating the File System"></a>Navigating the File System</h2><h3 id="The-Command-Line"><a href="#The-Command-Line" class="headerlink" title="The Command Line"></a>The Command Line</h3><p>The command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run.</p>
+            <h2 id="The-Command-Line"><a href="#The-Command-Line" class="headerlink" title="The Command Line"></a>The Command Line</h2><p>The command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run.</p>
 <p>From the command line, you can navigate through files and folders on your computer, just as you would with Finder on Mac OS or Windows Explorer on Windows. The difference is that the command line is fully text-based.</p>
 <p>The advantage of using the command line is its power. You can run programs, write scripts to automate common tasks, and combine simple commands to handle difficult tasks – making it an important programming tool.</p>
-<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
-<p>ls - list files in current path working directory. This one is probably the most useful one. The command line looks at the folder you are in, and then “lists” the files and folders inside it.</p>
-<h4 id="Filesystem"><a href="#Filesystem" class="headerlink" title="Filesystem"></a>Filesystem</h4><p><img src="gallery/backend/chapter2/Image1.png" alt="Image 1"></p>
-<p>A filesystem organizes a computer’s files and directories into a tree structure:</p>
-<ol>
-<li>The first directory in the filesystem is the root directory. It is the parent of all other directories and files in the filesystem.</li>
-<li>Each parent directory can contain more child directories and files. Here blog/ is the parent of 2014/, 2015/, and hardware.txt.</li>
-<li>Each directory can contain more files and child directories. The parent-child relationship continues as long as directories and files are nested.</li>
-</ol>
-<h4 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">pwd</span></span><br></pre></td></tr></table></figure>
-
-<p>pwd stands for “print working directory”. It outputs the name of the directory you are currently in, called the working directory.</p>
-<p>Together with <code>ls</code>, the <code>pwd</code> command is useful to show where you are in the filesystem.</p>
-<h4 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> [name]</span><br></pre></td></tr></table></figure>
-
-<p><code>cd</code> stands for “change directory”. Just as you would click on a folder in Windows Explorer or Finder, <code>cd</code> switches you into the directory you specify. In other words, <code>cd</code> changes the working directory.</p>
-<p>The <code>cd</code> command takes a directory name as an argument, and <strong>switches</strong> into that directory.</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
-
-<p>To move up one directory, use <code>cd ..</code></p>
-<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir [name]</span><br></pre></td></tr></table></figure>
-
-<p>The <code>mkdir</code> command stands for <strong>“make directory”</strong>. It takes in a directory name as an argument, and then creates a new directory in the current working directory.</p>
-<h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch [name]</span><br></pre></td></tr></table></figure>
-
-<p>The <code>touch</code> command creates a new file inside the working directory. It takes in a filename as an argument, and then creates an empty file in the current working directory.</p>
-<h3 id="Command-Line-Interface-Setup"><a href="#Command-Line-Interface-Setup" class="headerlink" title="Command Line Interface Setup"></a>Command Line Interface Setup</h3><p>The command line is a powerful tool used by developers to find, create, and manipulate files and folders.</p>
+<h2 id="Command-Line-Interface-Setup"><a href="#Command-Line-Interface-Setup" class="headerlink" title="Command Line Interface Setup"></a>Command Line Interface Setup</h2><p>The command line is a powerful tool used by developers to find, create, and manipulate files and folders.</p>
 <p>Command Line Interfaces (CLIs) come in many forms. The CLI we’ll use is called Bash.</p>
-<h4 id="What-is-Bash"><a href="#What-is-Bash" class="headerlink" title="What is Bash?"></a>What is Bash?</h4><p><strong>Bash</strong>, or the <strong>B</strong>ourne-<strong>A</strong>gain <strong>SH</strong>ell, is a CLI that was created over twenty-seven years ago by Brian Fox as a free software replacement for the Bourne Shell. </p>
+<h3 id="What-is-Bash"><a href="#What-is-Bash" class="headerlink" title="What is Bash?"></a>What is Bash?</h3><p><strong>Bash</strong>, or the <strong>B</strong>ourne-<strong>A</strong>gain <strong>SH</strong>ell, is a CLI that was created over twenty-seven years ago by Brian Fox as a free software replacement for the Bourne Shell. </p>
 <p>A <strong>shell</strong> is a specific kind of CLI. Bash is “open source” which means that anyone can read the code and suggest changes. Since its beginning, it has been supported by a large community of engineers who have worked to make it an incredible tool. Bash is the default shell for Linux and Mac. </p>
 <p>For these reasons, Bash is the most used and widely distributed shell. If you want to learn more about Bash, this <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank" rel="noopener">Wikipedia article</a> is a good place to start.</p>
-<h4 id="Bash-Setup-for-Mac"><a href="#Bash-Setup-for-Mac" class="headerlink" title="Bash Setup for Mac"></a>Bash Setup for Mac</h4><p>Bash is the default shell on Linux and Mac OS X, so good news, you don’t have to install anything!</p>
+<h3 id="Bash-Setup-for-Mac"><a href="#Bash-Setup-for-Mac" class="headerlink" title="Bash Setup for Mac"></a>Bash Setup for Mac</h3><p>Bash is the default shell on Linux and Mac OS X, so good news, you don’t have to install anything!</p>
 <p>To access Bash in OS X, you can use an application called <strong>Terminal</strong>.</p>
 <ol>
 <li><p>First open the <strong>Applications</strong> folder, then open the <strong>Utilities</strong> folder.</p>
@@ -230,6 +205,33 @@
 <li><p>For ease of access later, you can keep <strong>Terminal</strong> in your <strong>Dock</strong>. Simply right click (alt-click) the Terminal icon in your dock, then select “Options”, then “Keep In Dock.”</p>
 </li>
 </ol>
+<h2 id="Navigating-the-File-System"><a href="#Navigating-the-File-System" class="headerlink" title="Navigating the File System"></a>Navigating the File System</h2><h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+
+<p>ls - list files in current path working directory. This one is probably the most useful one. The command line looks at the folder you are in, and then “lists” the files and folders inside it.</p>
+<h3 id="Filesystem"><a href="#Filesystem" class="headerlink" title="Filesystem"></a>Filesystem</h3><p><img src="gallery/backend/chapter2/Image1.png" alt="Image 1"></p>
+<p>A filesystem organizes a computer’s files and directories into a tree structure:</p>
+<ol>
+<li>The first directory in the filesystem is the root directory. It is the parent of all other directories and files in the filesystem.</li>
+<li>Each parent directory can contain more child directories and files. Here blog/ is the parent of 2014/, 2015/, and hardware.txt.</li>
+<li>Each directory can contain more files and child directories. The parent-child relationship continues as long as directories and files are nested.</li>
+</ol>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<p>pwd stands for “print working directory”. It outputs the name of the directory you are currently in, called the working directory.</p>
+<p>Together with <code>ls</code>, the <code>pwd</code> command is useful to show where you are in the filesystem.</p>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> [name]</span><br></pre></td></tr></table></figure>
+
+<p><code>cd</code> stands for “change directory”. Just as you would click on a folder in Windows Explorer or Finder, <code>cd</code> switches you into the directory you specify. In other words, <code>cd</code> changes the working directory.</p>
+<p>The <code>cd</code> command takes a directory name as an argument, and <strong>switches</strong> into that directory.</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+
+<p>To move up one directory, use <code>cd ..</code></p>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir [name]</span><br></pre></td></tr></table></figure>
+
+<p>The <code>mkdir</code> command stands for <strong>“make directory”</strong>. It takes in a directory name as an argument, and then creates a new directory in the current working directory.</p>
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch [name]</span><br></pre></td></tr></table></figure>
+
+<p>The <code>touch</code> command creates a new file inside the working directory. It takes in a filename as an argument, and then creates an empty file in the current working directory.</p>
 <h2 id="Viewing-and-Changing-the-File-System"><a href="#Viewing-and-Changing-the-File-System" class="headerlink" title="Viewing and Changing the File System"></a>Viewing and Changing the File System</h2><h3 id="Manipulation"><a href="#Manipulation" class="headerlink" title="Manipulation"></a>Manipulation</h3><h4 id="ls-a"><a href="#ls-a" class="headerlink" title="ls -a"></a>ls -a</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -a</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -668,204 +670,200 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#Navigating-the-File-System">
-        <span class="has-mr-6">1</span>
-        <span>Navigating the File System</span>
-        </a><ul class="menu-list"><li>
         <a class="is-flex" href="#The-Command-Line">
-        <span class="has-mr-6">1.1</span>
+        <span class="has-mr-6">1</span>
         <span>The Command Line</span>
         </a></li><li>
-        <a class="is-flex" href="#Navigation">
-        <span class="has-mr-6">1.2</span>
-        <span>Navigation</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#ls">
-        <span class="has-mr-6">1.2.1</span>
-        <span>ls</span>
-        </a></li><li>
-        <a class="is-flex" href="#Filesystem">
-        <span class="has-mr-6">1.2.2</span>
-        <span>Filesystem</span>
-        </a></li><li>
-        <a class="is-flex" href="#pwd">
-        <span class="has-mr-6">1.2.3</span>
-        <span>pwd</span>
-        </a></li><li>
-        <a class="is-flex" href="#cd">
-        <span class="has-mr-6">1.2.4</span>
-        <span>cd</span>
-        </a></li><li>
-        <a class="is-flex" href="#mkdir">
-        <span class="has-mr-6">1.2.5</span>
-        <span>mkdir</span>
-        </a></li><li>
-        <a class="is-flex" href="#touch">
-        <span class="has-mr-6">1.2.6</span>
-        <span>touch</span>
-        </a></li></ul></li><li>
         <a class="is-flex" href="#Command-Line-Interface-Setup">
-        <span class="has-mr-6">1.3</span>
+        <span class="has-mr-6">2</span>
         <span>Command Line Interface Setup</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#What-is-Bash">
-        <span class="has-mr-6">1.3.1</span>
+        <span class="has-mr-6">2.1</span>
         <span>What is Bash?</span>
         </a></li><li>
         <a class="is-flex" href="#Bash-Setup-for-Mac">
-        <span class="has-mr-6">1.3.2</span>
+        <span class="has-mr-6">2.2</span>
         <span>Bash Setup for Mac</span>
-        </a></li></ul></li></ul></li><li>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Navigating-the-File-System">
+        <span class="has-mr-6">3</span>
+        <span>Navigating the File System</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#ls">
+        <span class="has-mr-6">3.1</span>
+        <span>ls</span>
+        </a></li><li>
+        <a class="is-flex" href="#Filesystem">
+        <span class="has-mr-6">3.2</span>
+        <span>Filesystem</span>
+        </a></li><li>
+        <a class="is-flex" href="#pwd">
+        <span class="has-mr-6">3.3</span>
+        <span>pwd</span>
+        </a></li><li>
+        <a class="is-flex" href="#cd">
+        <span class="has-mr-6">3.4</span>
+        <span>cd</span>
+        </a></li><li>
+        <a class="is-flex" href="#mkdir">
+        <span class="has-mr-6">3.5</span>
+        <span>mkdir</span>
+        </a></li><li>
+        <a class="is-flex" href="#touch">
+        <span class="has-mr-6">3.6</span>
+        <span>touch</span>
+        </a></li></ul></li><li>
         <a class="is-flex" href="#Viewing-and-Changing-the-File-System">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">4</span>
         <span>Viewing and Changing the File System</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#Manipulation">
-        <span class="has-mr-6">2.1</span>
+        <span class="has-mr-6">4.1</span>
         <span>Manipulation</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#ls-a">
-        <span class="has-mr-6">2.1.1</span>
+        <span class="has-mr-6">4.1.1</span>
         <span>ls -a</span>
         </a></li><li>
         <a class="is-flex" href="#ls-l">
-        <span class="has-mr-6">2.1.2</span>
+        <span class="has-mr-6">4.1.2</span>
         <span>ls -l</span>
         </a></li><li>
         <a class="is-flex" href="#ls-alt">
-        <span class="has-mr-6">2.1.3</span>
+        <span class="has-mr-6">4.1.3</span>
         <span>ls -alt</span>
         </a></li><li>
         <a class="is-flex" href="#cp">
-        <span class="has-mr-6">2.1.4</span>
+        <span class="has-mr-6">4.1.4</span>
         <span>cp</span>
         </a></li><li>
         <a class="is-flex" href="#Wildcards">
-        <span class="has-mr-6">2.1.5</span>
+        <span class="has-mr-6">4.1.5</span>
         <span>Wildcards</span>
         </a></li><li>
         <a class="is-flex" href="#mv">
-        <span class="has-mr-6">2.1.6</span>
+        <span class="has-mr-6">4.1.6</span>
         <span>mv</span>
         </a></li><li>
         <a class="is-flex" href="#rm">
-        <span class="has-mr-6">2.1.7</span>
+        <span class="has-mr-6">4.1.7</span>
         <span>rm</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#Redirection">
-        <span class="has-mr-6">2.2</span>
+        <span class="has-mr-6">4.2</span>
         <span>Redirection</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#stdin-stdout-and-stderr">
-        <span class="has-mr-6">2.2.1</span>
+        <span class="has-mr-6">4.2.1</span>
         <span>stdin, stdout, and stderr</span>
         </a></li><li>
         <a class="is-flex" href="#How-Does-Redirection-Work">
-        <span class="has-mr-6">2.2.2</span>
+        <span class="has-mr-6">4.2.2</span>
         <span>How Does Redirection Work?</span>
         </a></li><li>
         <a class="is-flex" href="#gt">
-        <span class="has-mr-6">2.2.3</span>
+        <span class="has-mr-6">4.2.3</span>
         <span>&gt;</span>
         </a></li><li>
         <a class="is-flex" href="#gt-gt">
-        <span class="has-mr-6">2.2.4</span>
+        <span class="has-mr-6">4.2.4</span>
         <span>&gt;&gt;</span>
         </a></li><li>
         <a class="is-flex" href="#lt">
-        <span class="has-mr-6">2.2.5</span>
+        <span class="has-mr-6">4.2.5</span>
         <span>&lt;</span>
         </a></li><li>
         <a class="is-flex" href="#">
-        <span class="has-mr-6">2.2.6</span>
+        <span class="has-mr-6">4.2.6</span>
         <span>|</span>
         </a></li><li>
         <a class="is-flex" href="#sort">
-        <span class="has-mr-6">2.2.7</span>
+        <span class="has-mr-6">4.2.7</span>
         <span>sort</span>
         </a></li><li>
         <a class="is-flex" href="#uniq">
-        <span class="has-mr-6">2.2.8</span>
+        <span class="has-mr-6">4.2.8</span>
         <span>uniq</span>
         </a></li><li>
         <a class="is-flex" href="#grep">
-        <span class="has-mr-6">2.2.9</span>
+        <span class="has-mr-6">4.2.9</span>
         <span>grep</span>
         </a></li><li>
         <a class="is-flex" href="#sed">
-        <span class="has-mr-6">2.2.10</span>
+        <span class="has-mr-6">4.2.10</span>
         <span>sed</span>
         </a></li></ul></li></ul></li><li>
         <a class="is-flex" href="#Configuring-the-Environment">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">5</span>
         <span>Configuring the Environment</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#Environment">
-        <span class="has-mr-6">3.1</span>
+        <span class="has-mr-6">5.1</span>
         <span>Environment</span>
         </a></li><li>
         <a class="is-flex" href="#nano">
-        <span class="has-mr-6">3.2</span>
+        <span class="has-mr-6">5.2</span>
         <span>nano</span>
         </a></li><li>
         <a class="is-flex" href="#Bash-Profile">
-        <span class="has-mr-6">3.3</span>
+        <span class="has-mr-6">5.3</span>
         <span>Bash Profile</span>
         </a></li><li>
         <a class="is-flex" href="#Aliases">
-        <span class="has-mr-6">3.4</span>
+        <span class="has-mr-6">5.4</span>
         <span>Aliases</span>
         </a></li><li>
         <a class="is-flex" href="#Environment-Variables">
-        <span class="has-mr-6">3.5</span>
+        <span class="has-mr-6">5.5</span>
         <span>Environment Variables</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#PS1">
-        <span class="has-mr-6">3.5.1</span>
+        <span class="has-mr-6">5.5.1</span>
         <span>PS1</span>
         </a></li><li>
         <a class="is-flex" href="#HOME">
-        <span class="has-mr-6">3.5.2</span>
+        <span class="has-mr-6">5.5.2</span>
         <span>HOME</span>
         </a></li><li>
         <a class="is-flex" href="#PATH">
-        <span class="has-mr-6">3.5.3</span>
+        <span class="has-mr-6">5.5.3</span>
         <span>PATH</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#env">
-        <span class="has-mr-6">3.6</span>
+        <span class="has-mr-6">5.6</span>
         <span>env</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#Learn-Bash-Scripting">
-        <span class="has-mr-6">4</span>
+        <span class="has-mr-6">6</span>
         <span>Learn Bash Scripting</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#Introduction-to-Bash-Scripting">
-        <span class="has-mr-6">4.1</span>
+        <span class="has-mr-6">6.1</span>
         <span>Introduction to Bash Scripting</span>
         </a></li><li>
         <a class="is-flex" href="#Variables">
-        <span class="has-mr-6">4.2</span>
+        <span class="has-mr-6">6.2</span>
         <span>Variables</span>
         </a></li><li>
         <a class="is-flex" href="#Conditionals">
-        <span class="has-mr-6">4.3</span>
+        <span class="has-mr-6">6.3</span>
         <span>Conditionals</span>
         </a></li><li>
         <a class="is-flex" href="#Loops">
-        <span class="has-mr-6">4.4</span>
+        <span class="has-mr-6">6.4</span>
         <span>Loops</span>
         </a></li><li>
         <a class="is-flex" href="#Inputs">
-        <span class="has-mr-6">4.5</span>
+        <span class="has-mr-6">6.5</span>
         <span>Inputs</span>
         </a></li><li>
         <a class="is-flex" href="#Aliases-1">
-        <span class="has-mr-6">4.6</span>
+        <span class="has-mr-6">6.6</span>
         <span>Aliases</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#Acknowledges">
-        <span class="has-mr-6">5</span>
+        <span class="has-mr-6">7</span>
         <span>Acknowledges</span>
         </a></li></ul>
         </div>
