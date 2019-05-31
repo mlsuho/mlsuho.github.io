@@ -57,7 +57,7 @@ You can open category [Backend][Backend] to follow all articles and learn about 
 [Roadmap]: https://github.com/kamranahmedse/developer-roadmap
 [Backend]: /categories/Backend
 [Chapter 1]: /Backend/chapter-1-git-version-control/
-[Chapter 2]: #
+[Chapter 2]: /Backend/chapter-2-basic-terminal-usage/
 [Chapter 3]: #
 [Chapter 4]: #
 [Chapter 5]: #
