@@ -625,7 +625,7 @@ alias saycolors='./saycolors.sh "green"'
 
 Special thanks to the course [Learn the Command Line] of [Codecademy]
 
-[Image 1]: gallery/backend/chapter2/Image1.png
+[Image 1]: /gallery/backend/chapter2/Image1.png
 [Wiki]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
 [Learn the Command Line]: https://www.codecademy.com/learn/learn-the-command-line
 [Codecademy]: https://www.codecademy.com
