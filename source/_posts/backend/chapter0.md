@@ -11,11 +11,11 @@ categories:
 - Backend
 ---
 
-My objective is create this document for anyone who want to completely beginner to Backend and Golang. I hope that you guys will find useful knowledge and materials here.
+Chào mọi người, với mục đích học tập Backend và với Golang, nên mình quyết định vừa học vừa viết document, mục tiêu của mình khi viết document này là dành cho mọi người bắt đầu tiếp xúc với Backend và Golang như mình. Hy vọng mọi người sẽ tìm kiếm cũng như học hỏi được từ những gì mình chia sẻ.
 
-Thanks to [Developer Roadmap][Roadmap], with the paths that I can take and the technologies that I want to adopt in order to become a backend developer.
+Cảm ơn những người đã đóng góp cho [Developer Roadmap][Roadmap], với một lộ trình cụ thể như vậy, mình có thể học theo từng bước để trở thành một Backend Developer.
 
-You can open category [Backend][Backend] to follow all articles and learn about it.
+Bạn có thể truy cập vào https://backend.suho.dev để xem mình trình bày bằng `Gitbook` hoặc theo dõi trên blog của mình. Có thể bấm vào category [Backend][Backend] để theo dõi hết tất cả bài viết về Backend.
 
 <!-- more -->
 
