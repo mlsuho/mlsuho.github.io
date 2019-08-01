@@ -15,7 +15,7 @@ Chào mọi người, với mục đích học tập Backend và với Golang, n
 
 Cảm ơn những người đã đóng góp cho [Developer Roadmap][Roadmap], với một lộ trình cụ thể như vậy, mình có thể học theo từng bước để trở thành một Backend Developer.
 
-Bạn có thể truy cập vào https://backend.suho.dev để xem mình trình bày bằng `Gitbook` hoặc theo dõi trên blog của mình. Có thể bấm vào category [Backend][Backend] để theo dõi hết tất cả bài viết về Backend.
+Bạn có thể truy cập vào https://backend.suho.dev để xem mình trình bày bằng `Gitbook`.
 
 <!-- more -->
 
@@ -55,34 +55,33 @@ Bạn có thể truy cập vào https://backend.suho.dev để xem mình trình 
 - [Chapter 30: Other knowledges][Chapter 30]
 
 [Roadmap]: https://github.com/kamranahmedse/developer-roadmap
-[Backend]: /categories/Backend
-[Chapter 1]: /Backend/chapter-1-git-version-control/
-[Chapter 2]: /Backend/chapter-2-basic-terminal-usage/
-[Chapter 3]: #
-[Chapter 4]: #
-[Chapter 5]: #
-[Chapter 6]: #
-[Chapter 7]: #
-[Chapter 8]: #
-[Chapter 9]: #
-[Chapter 10]: #
-[Chapter 11]: #
-[Chapter 12]: #
-[Chapter 13]: #
-[Chapter 14]: #
-[Chapter 15]: #
-[Chapter 16]: #
-[Chapter 17]: #
-[Chapter 18]: #
-[Chapter 19]: #
-[Chapter 20]: #
-[Chapter 21]: #
-[Chapter 22]: #
-[Chapter 23]: #
-[Chapter 24]: #
-[Chapter 25]: #
-[Chapter 26]: #
-[Chapter 27]: #
-[Chapter 28]: #
-[Chapter 29]: #
-[Chapter 30]: #
+[Chapter 1]: https://backend.suho.dev
+[Chapter 2]: https://backend.suho.dev
+[Chapter 3]: https://backend.suho.dev
+[Chapter 4]: https://backend.suho.dev
+[Chapter 5]: https://backend.suho.dev
+[Chapter 6]: https://backend.suho.dev
+[Chapter 7]: https://backend.suho.dev
+[Chapter 8]: https://backend.suho.dev
+[Chapter 9]: https://backend.suho.dev
+[Chapter 10]: https://backend.suho.dev
+[Chapter 11]: https://backend.suho.dev
+[Chapter 12]: https://backend.suho.dev
+[Chapter 13]: https://backend.suho.dev
+[Chapter 14]: https://backend.suho.dev
+[Chapter 15]: https://backend.suho.dev
+[Chapter 16]: https://backend.suho.dev
+[Chapter 17]: https://backend.suho.dev
+[Chapter 18]: https://backend.suho.dev
+[Chapter 19]: https://backend.suho.dev
+[Chapter 20]: https://backend.suho.dev
+[Chapter 21]: https://backend.suho.dev
+[Chapter 22]: https://backend.suho.dev
+[Chapter 23]: https://backend.suho.dev
+[Chapter 24]: https://backend.suho.dev
+[Chapter 25]: https://backend.suho.dev
+[Chapter 26]: https://backend.suho.dev
+[Chapter 27]: https://backend.suho.dev
+[Chapter 28]: https://backend.suho.dev
+[Chapter 29]: https://backend.suho.dev
+[Chapter 30]: https://backend.suho.dev

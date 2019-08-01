@@ -11,7 +11,7 @@ categories:
 - Backend
 ---
 
-Everything you need to know about **git**.
+Những thứ cần thiết về **Git** mà mọi người cần biết
 
 > Thanks to **Scott Chacon** and **Ben Straub**, authors of the book **[Pro Git][Pro Git]**
 
